@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.MainActivity"
+    tools:ignore="MissingConstraints">
+
+    <Button
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginBottom="20dip"
+        android:id="@+id/btn_back"
+        android:layout_width="100dip"
+        android:layout_height="50dip"
+        android:onClick="onBackClick"
+        android:text="@string/back"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+    <Button
+        android:layout_marginRight="10dip"
+        android:id="@+id/btn_search"
+        android:layout_width="100dip"
+        android:layout_height="50dip"
+        android:onClick="onSearchClick"
+        android:text="@string/search"
+        app:layout_constraintTop_toTopOf="@id/btn_back"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        app:layout_constraintTop_toTopOf="@id/btn_back"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:id="@+id/et_search"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:text="Apple"
+        android:singleLine="true"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_back"
+        app:layout_constraintRight_toLeftOf="@id/btn_search" />
+
+    <view.RecyclerEmptyView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_search" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:text="@string/empty_data"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/list_view"
+        app:layout_constraintLeft_toLeftOf="@id/list_view"
+        app:layout_constraintRight_toRightOf="@id/list_view"
+        app:layout_constraintTop_toTopOf="@id/list_view" />
+</androidx.constraintlayout.widget.ConstraintLayout>
